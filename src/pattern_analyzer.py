@@ -29,3 +29,14 @@ def analyze_fibonacci(triangle, rows):
             i -= 1
             j += 1
         fib_sequence.append(fib_num)
+
+    print("Fibonacci numbers from shallow diagonals:")
+    print(", ".join(map(str, fib_sequence)))
+    print("(Each number is the sum of the previous two)")
+
+def analyze_sierpinski_pattern(triangle):
+    """Mention the Sierpinski triangle pattern in parity"""
+    print("\nSierpinski Triangle Pattern:")
+    print("When coloring odd numbers and leaving even numbers blank,")
+    print("Pascal's Triangle approximates the Sierpinski fractal.")
+    print("(Visible in the colored output above)")
