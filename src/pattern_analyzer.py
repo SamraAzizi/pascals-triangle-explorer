@@ -13,3 +13,19 @@ def analyze_row_sums(triangle):
         row_sum = sum(row)
         power = i
         print(f"Row {i+1}: {row_sum} = 2^{power} ({2**power})")
+
+def analyze_fibonacci(triangle, rows):
+    """Demonstrate Fibonacci sequence in shallow diagonals"""
+    print("\nFibonacci Sequence in Diagonals:")
+    fib_sequence = []
+    max_diagonals = min(rows, 10)  # Limit for display
+    
+    for diagonal in range(max_diagonals):
+        fib_num = 0
+        i, j = diagonal, 0
+        while i >= 0 and j < len(triangle):
+            if i < len(triangle[j]):
+                fib_num += triangle[j][i]
+            i -= 1
+            j += 1
+        fib_sequence.append(fib_num)
