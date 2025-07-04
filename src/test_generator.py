@@ -11,3 +11,12 @@ class TestTriangleGenerator(unittest.TestCase):
             [1, 4, 6, 4, 1]
         ]
         self.assertEqual(generate_pascals_triangle(5), expected)
+    
+    def test_single_row(self):
+        self.assertEqual(generate_pascals_triangle(1), [[1]])
+    
+    def test_empty_triangle(self):
+        self.assertEqual(generate_pascals_triangle(0), [])
+
+if __name__ == '__main__':
+    unittest.main()
