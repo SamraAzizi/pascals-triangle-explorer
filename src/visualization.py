@@ -1,3 +1,4 @@
+
 # Color codes for terminal output
 COLORS = {
     'red': '\033[91m',
@@ -27,3 +28,9 @@ def display_colored_triangle(triangle):
             if num % 2 == 0:
                 colored_num = f"{COLORS['blue']}{num}{COLORS['reset']}"
             else:
+                colored_num = f"{COLORS['yellow']}{num}{COLORS['reset']}"
+            colored_row.append(colored_num)
+        print(' '.join(colored_row).center(max_width))
+    
+    print(f"\n{COLORS['yellow']}Yellow: Odd numbers{COLORS['reset']}")
+    print(f"{COLORS['blue']}Blue: Even numbers{COLORS['reset']}")
