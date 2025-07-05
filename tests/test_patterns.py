@@ -14,3 +14,21 @@ class TestPatternAnalysis(unittest.TestCase):
             "Row 1: 1 = 2^0 (1)",
             "Row 2: 2 = 2^1 (2)",
             "Row 6: 32 = 2^5 (32)"
+
+            with StringIO() as buf, redirect_stdout(buf):
+            analyze_row_sums(self.triangle)
+            output = buf.getvalue()
+            
+        for expected in expected_output:
+            self.assertIn(expected, output)
+
+    def test_fibonacci_sequence(self):
+        expected_fib = [1, 1, 2, 3, 5]
+        
+        with StringIO() as buf, redirect_stdout(buf):
+            analyze_fibonacci(self.triangle, self.max_fib_rows)
+            output = buf.getvalue()
+            
+        self.assertIn("Fibonacci numbers from shallow diagonals:", output)
+        for num in expected_fib:
+            self.assertIn(str(num), output)
