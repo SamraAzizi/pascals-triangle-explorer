@@ -14,8 +14,9 @@ class TestPatternAnalysis(unittest.TestCase):
             "Row 1: 1 = 2^0 (1)",
             "Row 2: 2 = 2^1 (2)",
             "Row 6: 32 = 2^5 (32)"
-
-            with StringIO() as buf, redirect_stdout(buf):
+        ]
+        
+        with StringIO() as buf, redirect_stdout(buf):
             analyze_row_sums(self.triangle)
             output = buf.getvalue()
             
@@ -32,3 +33,20 @@ class TestPatternAnalysis(unittest.TestCase):
         self.assertIn("Fibonacci numbers from shallow diagonals:", output)
         for num in expected_fib:
             self.assertIn(str(num), output)
+
+    def test_sierpinski_pattern_output(self):
+        expected_phrases = [
+            "Sierpinski Triangle Pattern",
+            "coloring odd numbers",
+            "Sierpinski fractal"
+        ]
+        
+        with StringIO() as buf, redirect_stdout(buf):
+            analyze_sierpinski_pattern(self.triangle)
+            output = buf.getvalue()
+            
+        for phrase in expected_phrases:
+            self.assertIn(phrase, output)
+
+if __name__ == '__main__':
+    unittest.main()
