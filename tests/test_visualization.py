@@ -27,3 +27,19 @@ class TestVisualization(unittest.TestCase):
         self.assertIn("2", output)
         self.assertIn(COLORS['blue'], output)  # Even number color
         self.assertIn(COLORS['yellow'], output)  # Odd number color
+
+        def test_display_colored_legend(self):
+        expected_legend = [
+            f"{COLORS['yellow']}Yellow: Odd numbers",
+            f"{COLORS['blue']}Blue: Even numbers"
+        ]
+        
+        with StringIO() as buf, redirect_stdout(buf):
+            display_colored_triangle(self.large_triangle)
+            output = buf.getvalue()
+            
+        for legend_item in expected_legend:
+            self.assertIn(legend_item, output)
+
+    def test_center_alignment_large_triangle(self):
+        with StringIO() as buf, redirect_stdout(buf):
