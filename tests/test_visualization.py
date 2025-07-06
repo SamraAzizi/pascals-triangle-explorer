@@ -11,7 +11,7 @@ class TestVisualization(unittest.TestCase):
 
     def test_display_triangle_output(self):
         expected = "  1  \n 1 1 \n1 2 1"
-
+        
         with StringIO() as buf, redirect_stdout(buf):
             display_triangle(self.small_triangle)
             output = buf.getvalue().strip()
@@ -28,7 +28,7 @@ class TestVisualization(unittest.TestCase):
         self.assertIn(COLORS['blue'], output)  # Even number color
         self.assertIn(COLORS['yellow'], output)  # Odd number color
 
-        def test_display_colored_legend(self):
+    def test_display_colored_legend(self):
         expected_legend = [
             f"{COLORS['yellow']}Yellow: Odd numbers",
             f"{COLORS['blue']}Blue: Even numbers"
@@ -43,3 +43,14 @@ class TestVisualization(unittest.TestCase):
 
     def test_center_alignment_large_triangle(self):
         with StringIO() as buf, redirect_stdout(buf):
+            display_triangle(self.large_triangle)
+            output = buf.getvalue().split('\n')
+            
+        # Check that all lines are centered
+        max_length = len(output[0])
+        for line in output[1:-1]:  # Skip first and last empty lines
+            if line.strip():  # Only check non-empty lines
+                self.assertEqual(len(line), max_length)
+
+if __name__ == '__main__':
+    unittest.main()
