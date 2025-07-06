@@ -11,3 +11,19 @@ class TestVisualization(unittest.TestCase):
 
     def test_display_triangle_output(self):
         expected = "  1  \n 1 1 \n1 2 1"
+
+        with StringIO() as buf, redirect_stdout(buf):
+            display_triangle(self.small_triangle)
+            output = buf.getvalue().strip()
+            
+        self.assertEqual(output, expected)
+
+    def test_display_colored_output_contains_numbers(self):
+        with StringIO() as buf, redirect_stdout(buf):
+            display_colored_triangle(self.small_triangle)
+            output = buf.getvalue()
+            
+        self.assertIn("1", output)
+        self.assertIn("2", output)
+        self.assertIn(COLORS['blue'], output)  # Even number color
+        self.assertIn(COLORS['yellow'], output)  # Odd number color
