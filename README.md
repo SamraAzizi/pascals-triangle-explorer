@@ -11,8 +11,7 @@
 - [Testing](#-testing)
 - [Mathematical Patterns](#-mathematical-patterns)
 - [Project Structure](#-project-structure)
-- [Contributing](#-contributing)
-- [License](#-license)
+
 
 ## ✨ Features
 - **Interactive CLI** - Enter any number of rows (1-20)
@@ -28,7 +27,7 @@
 ## 💻 Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/pascals-triangle-explorer.git
+   git clone https://github.com/SamraAzizi/pascals-triangle-explorer.git
    cd pascals-triangle-explorer
 
 2. (Optional) Create a virtual environment:
@@ -66,7 +65,6 @@ Fibonacci sequence: 1, 1, 2, 3, 5
 ## Examples
 see pre-generated outputs in `/exmaples`:
 - `basic_output.txt`: Standart Triangle
-- `colored_output.txt`: Color-formated version
 - `fibonacci_highlight.txt`: Diagonal pattern
 
 ## Testing
@@ -95,3 +93,20 @@ OK
 | Sierpinski    | Fractal pattern       | Odd/even parity          |
 
 ![Pattern Visualization](https://docs/patterns.png)
+
+## Project Structure
+```bash
+pascals-triangle-explorer/
+├── src/                   # Main source code
+│   ├── main.py            # CLI interface
+│   ├── triangle_generator.py  # Core logic
+│   ├── pattern_analyzer.py    # Math patterns
+│   └── visualization.py   # Display formatting
+├── tests/                 # Unit tests
+│   ├── test_generator.py
+│   ├── test_patterns.py
+│   └── test_visualization.py
+├── examples/              # Sample 
+└── README.md              # This file
+```
+
