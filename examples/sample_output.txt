@@ -1,0 +1,12 @@
+Pascal's Triangle (5 rows)
+-----------------
+    1    
+   1 1   
+  1 2 1  
+ 1 3 3 1 
+1 4 6 4 1
+
+Patterns Found:
+- Row sums: 1, 2, 4, 8, 16 (powers of 2)
+- Fibonacci: 1, 1, 2, 3, 5
+- Even numbers: 2, 4, 6, 4 (colored blue)
