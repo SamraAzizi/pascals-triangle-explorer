@@ -1,7 +1,8 @@
 # Pascal's Triangle Explorer
 
-![Pascal's Triangle Example](examples/colored_output.png)  
-*Visualizing mathematical patterns in Pascal's Triangle*
+ 
+Visualizes Pascal's Triangle with pattern detection
+Color-coded output, mathematical insights, and tested logic for exploring binomial coefficients and number theory.
 
 ## 📖 Table of Contents
 - [Features](#-features)
