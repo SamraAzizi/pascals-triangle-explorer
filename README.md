@@ -30,3 +30,35 @@
    ```bash
    git clone https://github.com/yourusername/pascals-triangle-explorer.git
    cd pascals-triangle-explorer
+
+2. (Optional) Create a virtual environment:
+```bash
+python -m venv venv
+source venv/bin/activate  # Linux/Mac
+venv\Scripts\activate     # Windows
+```
+
+## Usage
+Run the interactive explorer:
+```bash
+python src/main.py
+```
+
+Sample Output:
+```bash
+Enter number of rows (1-20): 5
+
+1. Basic Pascal's Triangle:
+    1    
+   1 1   
+  1 2 1  
+ 1 3 3 1 
+1 4 6 4 1
+
+2. Colored Triangle:
+[Yellow odd numbers, Blue even numbers]
+
+3. Pattern Analysis:
+Row sums: 1, 2, 4, 8, 16 (powers of 2)
+Fibonacci sequence: 1, 1, 2, 3, 5
+```
