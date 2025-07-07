@@ -62,3 +62,36 @@ Enter number of rows (1-20): 5
 Row sums: 1, 2, 4, 8, 16 (powers of 2)
 Fibonacci sequence: 1, 1, 2, 3, 5
 ```
+
+## Examples
+see pre-generated outputs in `/exmaples`:
+- `basic_output.txt`: Standart Triangle
+- `colored_output.txt`: Color-formated version
+- `fibonacci_highlight.txt`: Diagonal pattern
+
+## Testing
+Run the complete test suite:
+```bash
+python -m unittest discover tests
+```
+
+Expected Output:
+```bash
+...........
+----------------------------------------------------------------------
+Ran 11 tests in 0.002s
+
+OK
+```
+
+## 🔢 Mathematical Patterns
+
+### Key Discoveries
+
+| Pattern       | Example               | Mathematical Basis       |
+|---------------|-----------------------|--------------------------|
+| Powers of 2   | Row sums: 1, 2, 4, 8... | ∑C(n,k) = 2ⁿ             |
+| Fibonacci     | 1, 1, 2, 3, 5...      | Diagonal sums            |
+| Sierpinski    | Fractal pattern       | Odd/even parity          |
+
+![Pattern Visualization](https://docs/patterns.png)
